@@ -1,0 +1,53 @@
+<!-- templates/result.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row justify-content-center g-4">
+    <!-- Блок із завантаженим зображенням -->
+    <div class="col-lg-5">
+        <div class="card bg-dark-subtle border-secondary">
+            <div class="card-header">
+                Ваше зображення
+            </div>
+            <div class="card-body text-center">
+                <img src="data:image/jpeg;base64,{{ image_file }}" class="img-fluid rounded" alt="Uploaded Image">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Блок з результатами аналізу -->
+    <div class="col-lg-5">
+        <h2 class="mb-4">Результати аналізу</h2>
+        
+        <!-- Картка для Раси -->
+        <div class="card bg-dark-subtle border-secondary mb-3">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Раса</h5>
+                <p class="card-text display-6">{{ results.race.prediction }}</p>
+                <small class="text-muted">Впевненість: {{ results.race.confidence }}</small>
+            </div>
+        </div>
+
+        <!-- Картка для Гендеру -->
+        <div class="card bg-dark-subtle border-secondary mb-3">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Гендер</h5>
+                <p class="card-text display-6">{{ results.gender.prediction }}</p>
+                <small class="text-muted">Впевненість: {{ results.gender.confidence }}</small>
+            </div>
+        </div>
+
+        <!-- Картка для Віку -->
+        <div class="card bg-dark-subtle border-secondary mb-3">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Приблизний вік</h5>
+                <p class="card-text display-6">{{ results.age.prediction }} років</p>
+            </div>
+        </div>
+        
+        <div class="d-grid mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-outline-light">Спробувати інше фото</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

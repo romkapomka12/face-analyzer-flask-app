@@ -1,0 +1,22 @@
+<!-- templates/index.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="card bg-dark-subtle border-secondary shadow-lg">
+            <div class="card-body p-5">
+                <h2 class="card-title text-center mb-4">Завантажте фото</h2>
+                <form action="{{ url_for('analyze') }}" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <input class="form-control form-control-lg" type="file" name="file" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Аналізувати</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
