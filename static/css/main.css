@@ -1,0 +1,23 @@
+/* static/css/main.css */
+
+body {
+    /* Фон з патерном облич - ваша ідея! */
+    /* Це напівпрозоре зображення, яке не буде сильно заважати */
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    background-color: #212529; /* Темний фон, якщо патерн не завантажиться */
+    color: #f8f9fa; /* Світлий текст */
+}
+
+.card {
+    /* Додаємо легку прозорість карткам, щоб фон було видно */
+    background-color: rgba(43, 48, 53, 0.9) !important;
+    border-width: 2px;
+}
+
+.btn-primary {
+    /* Робимо головну кнопку трохи яскравішою */
+    --bs-btn-bg: #0d6efd;
+    --bs-btn-border-color: #0d6efd;
+    --bs-btn-hover-bg: #0b5ed7;
+    --bs-btn-hover-border-color: #0a58ca;
+}
